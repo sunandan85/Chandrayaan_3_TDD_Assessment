@@ -14,7 +14,21 @@ int main() {
     assert(chandrayaan.getZ() == -1);
     assert(chandrayaan.getDirection() == 'N');
 
-    // Add more test cases for different scenarios
+    // Test 2: Turn left
+    chandrayaan.executeCommands({'l'});
+    assert(chandrayaan.getX() == 0);
+    assert(chandrayaan.getY() == 1);
+    assert(chandrayaan.getZ() == -1);
+    assert(chandrayaan.getDirection() == 'W');
+
+    // Test 3: Turn right
+    chandrayaan.executeCommands({'r'});
+    assert(chandrayaan.getX() == 0);
+    assert(chandrayaan.getY() == 1);
+    assert(chandrayaan.getZ() == -1);
+    assert(chandrayaan.getDirection() == 'N');
+
+    // Add more test cases for turning up and down
 
     std::cout << "All test cases passed!" << std::endl;
     return 0;

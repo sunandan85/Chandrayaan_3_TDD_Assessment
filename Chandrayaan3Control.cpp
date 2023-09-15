@@ -62,21 +62,69 @@ void Chandrayaan3Control::moveBackward() {
 }
 
 void Chandrayaan3Control::turnLeft() {
-    // Implement turn left logic based on the current direction
-    // Update direction accordingly
+    switch (direction) {
+        case 'N':
+            direction = 'W';
+            break;
+        case 'S':
+            direction = 'E';
+            break;
+        case 'E':
+            direction = 'N';
+            break;
+        case 'W':
+            direction = 'S';
+            break;
+        default:
+            // Invalid direction
+            break;
+    }
 }
 
 void Chandrayaan3Control::turnRight() {
-    // Implement turn right logic based on the current direction
-    // Update direction accordingly
+    switch (direction) {
+        case 'N':
+            direction = 'E';
+            break;
+        case 'S':
+            direction = 'W';
+            break;
+        case 'E':
+            direction = 'S';
+            break;
+        case 'W':
+            direction = 'N';
+            break;
+        default:
+            // Invalid direction
+            break;
+    }
 }
 
 void Chandrayaan3Control::turnUp() {
-    // Implement turn up logic based on the current direction
-    // Update direction accordingly
+    switch (direction) {
+        case 'N':
+            direction = 'U';
+            break;
+        case 'S':
+            direction = 'D';
+            break;
+        default:
+            // Invalid direction
+            break;
+    }
 }
 
 void Chandrayaan3Control::turnDown() {
-    // Implement turn down logic based on the current direction
-    // Update direction accordingly
+    switch (direction) {
+        case 'U':
+            direction = 'N';
+            break;
+        case 'D':
+            direction = 'S';
+            break;
+        default:
+            // Invalid direction
+            break;
+    }
 }
