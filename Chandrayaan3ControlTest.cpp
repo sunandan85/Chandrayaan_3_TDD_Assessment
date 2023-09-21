@@ -4,9 +4,11 @@
 #include <iostream>
 #include <cassert>
 
+using namespace std;
+
 int main()
 {
-    Chandrayaan3Control chandrayaan(0, 0, 0, 'N');
+    Chandrayaan3Control chandrayaan(0, 0, 0, 'N', 'N');
 
     // Test 1: Basic movement
     chandrayaan.executeCommands({'f', 'r', 'u', 'b', 'l'});
@@ -39,12 +41,15 @@ int main()
     // Test 5: Move forward and backward with direction change
     chandrayaan.executeCommands({'r', 'f', 'l', 'b'});
     assert(chandrayaan.getX() == 1);
-    assert(chandrayaan.getY() == 1);
+    assert(chandrayaan.getY() == 0);
     assert(chandrayaan.getZ() == -1);
-    assert(chandrayaan.getDirection() == 'E');
+    assert(chandrayaan.getDirection() == 'N');
 
     // Add more test cases for turning up and down
 
     std::cout << "All test cases passed!" << std::endl;
     return 0;
 }
+
+
+// g++ Chandrayaan3Control.cpp Chandrayaan3ControlTest.cpp -o Chandrayaan3ControlTest
